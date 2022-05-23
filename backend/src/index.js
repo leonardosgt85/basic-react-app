@@ -3,7 +3,7 @@ const routes = require('./routes');
 
 
 const app = express();
-
+console.log('teste')
 app.use(express.json());
 app.use(routes);
 
