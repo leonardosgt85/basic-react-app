@@ -1,10 +1,13 @@
+import React from 'react'
+import './global.css'
+import Header from './components/Header';
+import RoutesFunction from './routes';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        test
-      </header>
+      <Header />
+      <RoutesFunction />
     </div>
   );
 }
