@@ -9,15 +9,10 @@ import Brasao from '../../assets/brasaoDaci.gif';
 export default function Login(){
     return(
         <div id='id_container_page_1'>
-            <div id= 'id_title_1' className='divCenter_1'>
-                <h1>S.F.I.C.I</h1>
-            </div>
+            <div id='id_container_form_1'>
+            
             <div id= 'id_brasao_l' className='divCenter_1'>
-                <img src={Brasao} alt='some value' width='10%'/>
-            </div>
-
-            <div id= 'id_lock' className='divCenter_1'>
-                <LockIcon fontSize = 'large'/>
+                <img src={Brasao} alt='some value' width='30%'/>
             </div>
 
             <div id='id_containerBox_1'>
@@ -48,6 +43,7 @@ export default function Login(){
                 required
                 id="outlined-required"
                 label="Password"
+                type={'password'}
                 defaultValue=""
                 />
             </div>
@@ -55,9 +51,14 @@ export default function Login(){
             <div id='id_button_1' className = 'divCenter_1'>
             <Button variant="contained" size="small">Enviar</Button>
             </div>
+
+            <div id= 'id_lock_1' className='divCenter_1'>
+                <LockIcon fontSize = 'large'/>
+            </div>
+
             </Box>
         </div>
-
+        </div>
         </div>
     )
 }
