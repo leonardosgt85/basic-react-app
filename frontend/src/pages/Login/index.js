@@ -5,8 +5,20 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Brasao from '../../assets/brasaoDaci.gif';
+import api from '../../services/api';
 
 export default function Login(){
+
+    const send = ()=>{
+            api.post('/teste',{dados:'123'}).then((r)=>{
+                console.log(r.data)
+            }).catch((e)=>{
+                console.log('error')
+                console.log(e)
+            })
+        
+    }
+
     return(
         <div id='id_container_page_1'>
             <div id='id_container_form_1'>
@@ -49,7 +61,7 @@ export default function Login(){
             </div>
             </div>
             <div id='id_button_1' className = 'divCenter_1'>
-            <Button variant="contained" size="small">Enviar</Button>
+            <Button variant="contained" size="small" onClick={send}>Enviar</Button>
             </div>
 
             <div id= 'id_lock_1' className='divCenter_1'>
