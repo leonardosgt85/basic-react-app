@@ -4,8 +4,8 @@ exports.up = function(knex) {
 
     t.increments('id');
     t.varchar('nome',100);
-    t.integer('cpf').notNullable();
-    t.integer('telefone');
+    t.varchar('cpf',22).notNullable();
+    t.varchar('telefone',22);
     t.varchar('email', 40);
     t.integer('unidade').unsigned();
     t.integer('grupo').unsigned();
