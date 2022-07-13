@@ -22,7 +22,10 @@ module.exports = {
     migrations: {
       directory: './src/database/migrations'
     },
-    seeds: './src/database/seeds'
+    seeds: {
+      directory: './src/database/seeds'
+  }
+
   },
 
   staging: {
