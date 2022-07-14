@@ -6,19 +6,24 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Brasao from '../../assets/brasaoDaci.gif';
 import api from '../../services/api';
+import md5 from 'md5';
 
 export default function Login(){
 
     const send = ()=>{
-            api.post('/teste',{dados:'123'}).then((r)=>{
+            const dados = {
+                            login: document.getElementById('fieldLogin').value,
+                            pwd:md5(document.getElementById('fieldLogin').value)
+                          }
+            api.post('/login',dados).then((r)=>{
                 console.log(r.data)
             }).catch((e)=>{
-                console.log('error')
                 console.log(e)
             })
         
     }
 
+    
     return(
         <div id='id_container_page_1'>
             <div id='id_container_form_1'>
@@ -43,7 +48,7 @@ export default function Login(){
             <div className = 'divCenter_1'>
                 <TextField
                 required
-                id="outlined-required"
+                id="fieldLogin"
                 label="Login"
                 defaultValue=""
                 

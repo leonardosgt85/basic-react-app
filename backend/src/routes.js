@@ -1,8 +1,8 @@
 const express = require('express');
 const routes  = express.Router();
-const example = require('./controllers/example')
+const login = require('./controllers/login')
 
-routes.post('/teste', example.create)
+routes.post('/login', login.create);
 
 
 module.exports =  routes;
