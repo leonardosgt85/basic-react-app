@@ -1,5 +1,7 @@
 const express = require('express');
 const routes = require('./routes');
+require('dotenv').config()
+
 //O CORS está sendo utilizado para driblar o proxy.
 //a linha abaixo faz referência ao uso do CORS PARA DESENVOLVIMENTO, DEVE SER RETIRADA EM PRODUÇÃO
 const cors=require("cors");

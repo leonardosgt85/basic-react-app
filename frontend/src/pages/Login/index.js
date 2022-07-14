@@ -13,9 +13,9 @@ export default function Login(){
     const send = ()=>{
             const dados = {
                             login: document.getElementById('fieldLogin').value,
-                            pwd:md5(document.getElementById('fieldLogin').value)
+                            pwd:md5(document.getElementById('fieldPwd').value)
                           }
-            api.post('/login',dados).then((r)=>{
+            api.post('/login', dados).then((r)=>{
                 console.log(r.data)
             }).catch((e)=>{
                 console.log(e)
@@ -23,7 +23,7 @@ export default function Login(){
         
     }
 
-    
+
     return(
         <div id='id_container_page_1'>
             <div id='id_container_form_1'>
@@ -58,7 +58,7 @@ export default function Login(){
             <div className = 'divCenter_1'>
             <TextField
                 required
-                id="outlined-required"
+                id="fieldPwd"
                 label="Password"
                 type={'password'}
                 defaultValue=""
