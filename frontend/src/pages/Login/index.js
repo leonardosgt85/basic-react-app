@@ -7,8 +7,12 @@ import Button from '@mui/material/Button';
 import Brasao from '../../assets/brasaoDaci.gif';
 import api from '../../services/api';
 import md5 from 'md5';
+import Alert2 from '../../components/Alert';
+import alertState from '../../components/zustand/alertState';
 
 export default function Login(){
+    const alertstateData = alertState(state=>state.alertData);
+    const setAlertData = alertState(state=>state.setAlertData);
 
     const send = ()=>{
             const dados = {
@@ -16,16 +20,15 @@ export default function Login(){
                             pwd:md5(document.getElementById('fieldPwd').value)
                           }
             api.post('/login', dados).then((r)=>{
-                console.log(r.data)
             }).catch((e)=>{
-                console.log(e)
+                setAlertData({severity:('error'), message:e.response.data});
             })
         
     }
 
-
     return(
         <div id='id_container_page_1'>
+            {alertstateData ? <Alert2 sev={alertstateData.severity}  child={alertstateData.message}></Alert2> : <></>}
             <div id='id_container_form_1'>
             
             <div id= 'id_brasao_l' className='divCenter_1'>
