@@ -20,6 +20,8 @@ export default function Login(){
                             pwd:md5(document.getElementById('fieldPwd').value)
                           }
             api.post('/login', dados).then((r)=>{
+                console.log(r)
+                setAlertData({severity:('success'), message:'Login realizado com sucesso!'});
             }).catch((e)=>{
                 setAlertData({severity:('error'), message:e.response.data});
             })
