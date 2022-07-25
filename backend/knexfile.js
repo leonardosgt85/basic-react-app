@@ -5,8 +5,8 @@
  */
 module.exports = {
 
-  development: {
-    client: 'postgresql',
+  development: { 
+    client: 'postgresql',   
     version:'14.2',
     connection: {
       host : '127.0.0.1',
